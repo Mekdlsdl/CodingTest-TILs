@@ -33,12 +33,6 @@ public class Solution {
         
         return cnt;
     }
-    
-    // 가장 많이 맞힌 사람
-    // 인덱스는 0부터 수포자 번호는 1부터
-    public void best() {
-        
-    }
         
     public int[] solution(int[] answers) {
         ans = answers;
@@ -62,9 +56,11 @@ public class Solution {
                 dic[key] = new List<int>();
             }
             
+            // 인덱스는 0부터 수포자 번호는 1부터
             dic[key].Add(i + 1);
         }
         
+        // 가장 많이 맞힌 사람
         var list = dic.OrderByDescending(x => x.Key).ToList();
         answer = list[0].Value.ToArray();
         
